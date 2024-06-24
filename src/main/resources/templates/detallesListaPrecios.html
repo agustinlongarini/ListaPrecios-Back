@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de Lista de Precios</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>Detalles de la Lista de Precios</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Tipo de Trámite</th>
+        <th>Precio</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="detalle : ${tipoTramiteListaPrecios}">
+        <td th:text="${detalle.tipoTramite.nombreTipoTramite}">Renovación de Licencia de Conducir</td>
+        <td th:text="${detalle.precioTipoTramite}">100.0</td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/listasPrecios}">
+    <button>Volver a Listas de Precios</button>
+</a>
+</body>
+</html>
